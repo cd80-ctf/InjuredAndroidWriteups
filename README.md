@@ -3,8 +3,7 @@ Writeups for the intentionally vulnerable Android app InjuredAndroid (https://gi
 
 # Setup
 
-As every researcher knows, the most difficult part of exploiting an application is often setting it up in the first place. As such, I'll give a detailed summary
-of my exact setup.
+As every researcher knows, the most difficult part of exploiting a target application or device is often setting it up in the first place. As such, I'll give a detailed walkthrough of how to set up your Android research environment.
 
 ## The vulnerable VM
 

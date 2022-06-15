@@ -24,6 +24,13 @@ Once Android Studio is set up, it's time to create the actual VM. Thankfully, th
 ![system_images](https://user-images.githubusercontent.com/86139991/173699399-57add92f-2b0b-4ed6-8531-c9e88db1382b.png)
 5. Click `Finish` to create your Android image.
 
+Before we close Android Studio, let's increase the storage of the device. This will be useful later when we want to run debug servers or other
+nonsense on the VM:
+
+1. In Device Manager, click the pen icon to edit your image.
+2. Click "Show Advanced Settings" and scroll to the bottom.
+3. Set the Internal Storage to 2048 MB.
+
 ### Running the image
 Once we create the image, we're all done with Android Studio. We can now run the VM we created using the `emulator` binary that it installed on our system. At time of writing, this can be in a few different places based on your operating system:
 

@@ -61,7 +61,9 @@ Download and extract the binary. Once you've done that, you might want to add th
 
 `adb start-server`
 
-in the command line to start the ADB backend.
+in the command line to start the ADB backend. In order to avoid permissions errors, we should also make sure it's running as root:
+
+`adb root`
 
 If you'd like, you can now restart your Android VM. Doing so will connect it to your ADB backend automatically, allowing you to debug nearly everything on the phone.
 

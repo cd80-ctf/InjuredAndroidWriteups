@@ -1,6 +1,5 @@
 # Flag 1 | Login
-Welcome to the first flag! As with many CTF competitions, this one is fairly straightforward, more focused on teaching you the tools and methods of Android app
-exploitation than on a complex, intricate puzzle.
+Welcome to the first flag! As with many CTF competitions, this one is fairly straightforward, more focused on teaching you the tools and methods of Android app exploitation than on presenting an intricate puzzle.
 
 ## The target
 

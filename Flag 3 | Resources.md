@@ -72,4 +72,4 @@ In this challenge, we learned how fruitful it can be to examine an application's
 give us invaluable information about the behavior and attack surface of the app. When targeting smaller apps, it's not even unheard of to find
 hardcoded credentials inside `strings.xml`. Long story short, we learned you should always look at `strings.xml` early in the research process. 
 
-Next time, we'll take our first step towards something more complicated.
+Next time, we'll finish our survey of the basics by looking at imported classes.

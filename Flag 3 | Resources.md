@@ -1,4 +1,4 @@
-# Flag 2 | Exported Activity
+# Flag 3 | Resources
 Welcome back! Last time, we were introduced to *exported activities*, the main external attack surface of an Android application. This time, we're going
 to pivot to an *internal* attack surface -- a place where misguided developers often store hardcoded credentials, API endpoints, and other information
 that is invaluable to our research.

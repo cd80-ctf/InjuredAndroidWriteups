@@ -16,14 +16,17 @@ This is similar to the second task. We have to find a way to unlock the flag thr
 
 As is tradition, we will start off by searching `AndroidManifest.xml` for `"flag_five"`:
 
+![manifest](https://user-images.githubusercontent.com/86139991/173929010-7353d0f1-de93-431f-ad8d-ca190d4dc066.PNG)
 
 Checking out `b3nac.injuredandroid.FlagFiveActivity` in the decompiler, we find no `submitFlag` function (unlike the past several challenges).
 However, we do find some extra code in `onCreate`:
 
+![on_create](https://user-images.githubusercontent.com/86139991/173929023-8aca79ef-e4b8-43fd-86fa-d1eb3d78a4b2.PNG)
 
 This is a bit strange. The code seems to be adding an `onClick` listener to a button, but there's no button in the event. Ignoring that for now,
 we see that when the user clicks this nonexistent button, it calls the class member function `H()`, which calls another member function, `F()`:
 
+![send_broadcast](https://user-images.githubusercontent.com/86139991/173929056-f2682cd9-532b-40cf-a564-539a25029223.PNG)
 
 This is interesting -- `F()` seems to send out some kind of broadcast. The intent declared in the broadcast matches the strange popup we saw when we opened
 the challenge. Could this be related to how we get the flag?
@@ -41,6 +44,7 @@ is to look for a `BroadcastReciever` which handles this event.
 Luckily, we don't have to look far. Just before the original class broadcasts the intent, it makes a few suggestive calls regarding some sort of
 `FlagFiveReciever`:
 
+![reciever_intent_filter](https://user-images.githubusercontent.com/86139991/173929087-eae451da-79a6-4b6b-943d-e71323fbd279.PNG)
 
 We can check that `FlagFiveReciever.x` is, in fact, an instance of `FlagFiveReciever`. Though the exact functions are obfuscated, this code appears to be
 applying a filter to this reciever for events with an intent of `"com.b3nac.injuredandroid.intent.action.CUSTOM_INTENT"`. Very promising!
@@ -49,22 +53,24 @@ applying a filter to this reciever for events with an intent of `"com.b3nac.inju
 
 The obvious next step is to examine the decompiled `FlagFiveReciever`:
 
+![flag_five_reciever](https://user-images.githubusercontent.com/86139991/173929103-de36b40e-eedf-44c2-8abe-ea4baa3335c1.PNG)
 
 We can see code near the bottom that seems to unlock the flag. In order to reach it, the field `f1454a` must be `2`. This shouldn't be too hard, since we
 can see at the bottom that `f1454a` is incremented by `1` every time `onRecieve` is called.
 
 Recall that when we opened the challenge, it seemed like the request was sent. Could it be as easy as opening it again?
 
+![keep_trying](https://user-images.githubusercontent.com/86139991/173929116-b0504f2a-8fe9-4b6d-9f8b-d10a02ac5004.PNG)
 
 Again?
 
+![success](https://user-images.githubusercontent.com/86139991/173929128-58084733-7cae-4bf4-bca0-c15d9dfb7a0a.PNG)
 
 There we go.
 
 ### Viewing the reciever in the manifest
 
-Though it was not necessary for this event, it is important to know that recievers are declared in `AndroidManifest.xml`. If we search for `FlagFiveReciever`,
-we'll find its entry:
+Though it was not necessary for this event, it is important to know that recievers are declared in `AndroidManifest.xml`. If we search for `FlagFiveReciever`, we'll find its entry:
 
 ```
 <receiver android:name="b3nac.injuredandroid.FlagFiveReceiver" android:exported="true"/>

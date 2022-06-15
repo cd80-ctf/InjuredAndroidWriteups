@@ -1,5 +1,5 @@
 # Flag 2 | Exported Activity
-Welcoem back! Last time, we were introduced to the basics of what makes an Android app tick, and where to look if we want to break it (mostly `AndroidManifest.xml`).
+Welcome back! Last time, we were introduced to the basics of what makes an Android app tick, and where to look if we want to break it (mostly `AndroidManifest.xml`).
 We were also introduced to the concept of activities. This time, we're going to learn about the most important attack surface that any Android app can present:
 its *exported activities*.
 

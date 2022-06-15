@@ -4,7 +4,7 @@ with an added twist: the concept of *exported broadcast recievers*.
 
 ## The target
 
-Launching the InjuredAndroid app and selecting the fifth flag, we we find nothing besides a strange message about some `Action`:
+Launching the InjuredAndroid app and selecting the fifth flag, we find nothing besides a strange message about some `Action`:
 
 ![main_screen](https://user-images.githubusercontent.com/86139991/173895621-50721abc-d37a-473e-8f59-a6ade897b222.PNG)
 

@@ -45,7 +45,7 @@ activity manager via ADB. This is what we did to get at Flag 2.
 The command we can use to trigger this deeplink looks like
 
 ```
-adb shell am -a android.intent.action.VIEW -d "flag11://"
+adb shell am start -a android.intent.action.VIEW -d "flag11://"
 ```
 
 where `am` is the activity manager, `-a` specifies the activity to launch, `android.intent.action.VIEW` is the action declared for this deeplink in

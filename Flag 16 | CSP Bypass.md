@@ -1,4 +1,4 @@
-# Flag 15 | CSP Bypass
+# Flag 16 | CSP Bypass
 
 I will not be covering this activity because (on my Android emulator) the intended solution is broken. However, the concept of CSP bypass (and SSRF in general)
 is very useful, so I will cover the concepts included and how one would go about making a solution.

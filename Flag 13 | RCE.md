@@ -48,7 +48,7 @@ In fact, this app is more broken than it intends to be. To solve the flag, all y
 directory. This is why the app puts this directory at the start of our command. However, **the app fails to filter our input for two things**:
 
 - Shell metacharacters, such as `$()`, `|`, and `{}`. These characters allow us to embed extra commands in a single command. For example, if we pass
-`test | restart` as our binary, the command run will be `/files/test | restart`, which will restart the router.
+`test | restart` as our binary, the command run will be `/files/test | restart`, which will restart the device.
 - Path traversal via `..`. This means we don't even need shell metacharacters; we can execute any binary on the system. For example, if our binary is
 `../../../../../../../cat /etc/passwd`, the command will be `/files/../../../../../../../cat /etc/passwd`, which will print the contents of `/etc/passwd`.
 

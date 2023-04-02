@@ -51,8 +51,7 @@ can bypass the filter by embedding an `http` deep link in the browser. When the 
 In essence, we can abuse the bad redirection to pretend that a request is coming from the app, when in reality it came from somewhere else.
 
 Unfortunately, this doesn't work in the app, since `content` links are blocked by default in Chrome. We could set up our own public HTTP server to host
-a malicious HTML document with a `http` deep link, but frankly, that's more work than I'm willing to put in, especially once we already understand
-the vulnerability and how to exploit it.
+a malicious HTML document with a `http` deep link if we wanted. Consider this a final exercise for the reader.
 
 ## The takeaway
 
